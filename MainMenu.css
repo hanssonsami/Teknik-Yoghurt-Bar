@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    background-color: rgb(221, 255, 221);
+}
+
+@font-face {
+    font-family: bettermilk;
+    src: url(Yoghurt\ Font/Bettermilk.otf);
+}
+
+.mainMenu {
+    font-family: bettermilk;
+    background-color: rgb(255, 220, 254);
+    width: 100vw;
+    height: 140px;
+    justify-content: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10;
+}
+
+.mainMenu:hover {
+    height: 20vh;
+}
+
+.dropdown-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out, top 0.7s ease-in-out;
+    
+}
+
+.dropdown-content a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 1.2rem;
+    margin: 0 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    transition: background-color 0.5s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.mainMenu:hover .dropdown-content {
+    opacity: 1;
+    top: 13vh;
+}
+
+.image-container {
+    font-family: bettermilk;
+    position: absolute;
+    top: calc(20vh + 10vh);
+    left: 10px;
+    width: 50vw;
+    max-width: 50%;
+    opacity: 0;
+    animation: slideInLeft 1.5s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-container-right {
+    position: absolute;
+    top: calc(20vh + 10px);
+left: 55vw;
+    width: 45vw;
+    max-width: 50%;
+    opacity: 0;
+    animation: slideInRight 1.5s ease-out forwards;
+    animation-delay: 0.7s;
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.image-container-right img {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
